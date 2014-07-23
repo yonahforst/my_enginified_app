@@ -1,0 +1,26 @@
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to 'MyEnginifiedApp','/', class: "navbar-brand"%>
+    </div>
+    <div class="navbar-collapse collapse">
+
+      <p class="navbar-text navbar-right">
+        <% if user_signed_in? %>
+            Signed in as <%= link_to current_user.email, core.edit_user_registration_path %>
+            |
+            <%= link_to "Sign out", core.destroy_user_session_path, method: :delete %>
+        <% else %>
+            <%= link_to "Sign in", core.new_user_session_path %>
+        <% end %>
+      </p>
+
+    </div>
+  </div>
+</div>

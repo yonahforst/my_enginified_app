@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<dl class="dl-horizontal">
+
+  <dt><%= t(:first_name) %></dt>
+  <dd><%= @user.first_name %></dd>
+
+  <dt><%= t(:last_name) %></dt>
+  <dd><%= @user.last_name %></dd>
+
+  <dt><%= t(:email) %></dt>
+  <dd><%= @user.email %></dd>
+
+</dl>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %> | 
+<%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
